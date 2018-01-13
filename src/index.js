@@ -5,11 +5,23 @@ import ProductTable from './productTable.js';
 import './index.css';
   
 class FilterableProductTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterText: '',
+      inStockOnly: false
+    }
+  }
   render() {
     return (
       <div>
-        <SearchBar />
-        <ProductTable products={this.props.products} />
+        <SearchBar 
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+        />
+        <ProductTable 
+          products={this.props.products}
+           />
       </div>
     );
   }
@@ -26,7 +38,7 @@ function dataFunction() {
   ];
 }
 
-const PRODUCTS = dataFunction()();
+const PRODUCTS = dataFunction();
   
 ReactDOM.render(
   <FilterableProductTable products={PRODUCTS} />,

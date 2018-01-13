@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class ProductCategoryRow extends Component {
+export default class ProductCategoryRow extends Component {
   render () {
     const category = this.props.category;
     return (
@@ -12,5 +12,3 @@ class ProductCategoryRow extends Component {
     )
   }
 }
-
-export default ProductCategoryRow
